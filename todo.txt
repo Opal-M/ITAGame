@@ -1,0 +1,69 @@
+/////LEGEND//////
+X = Not done and probably never will be
+0 = Not being worked on
+/name/ = being worked on by name
+V - date - = Done
+/////////////////
+
+
+/////QUEUE///////
+
+
+
+/marisol/ Fix repl key error code (try and except)
+/parker/ fix hitboxes for nonvisible sprites
+
+Level Creation system (priority #1)
+  /Parker/ Find an asset pack (I (parker) have one already)
+    cut the assets
+  Make separate file for loading sprites
+  /gino and opal/ Make a level switcher (I think we should make a seperate          function for each level then put them in a class/otherfile then execute them)
+  Start screen (use level switcher, very low priority, just a placeholder)
+  Functions to place level background sprites manually
+    Include a dynamic sprite resizer (sprite always fits the screen no matter the resolution)
+  Goal object that brings the player to the calls the level switcher system
+  Framework to place level sprites on a grid system
+
+Enemys (priority #2 we should do level creation first)
+  Health system
+  Enemy 1
+    Jump on head to kill
+    Copy collision code from player class to this enemy class then have them change directions if they collide
+  Enemy 2
+    spike traps
+      if colliding bring the player's health down by 1, lock it so they don't get hurt again unless they stop touching it then touch it again or add a health  cooldown/visual clue for health cooldown
+      
+	Movement (priority #3 we should do enemies)
+    Wall jumping
+
+  Nice title/start screen (priority #4)
+		gives us bonus points
+    "Hit the flag pole to start" Flag pole located on top of the title and the title is 
+    at double jump height and then in order to reach the top of the title you need to 
+    walljump between the letters. This introduces pretty much all mechanics/controls in the game
+	
+	Arrow keys (priority #5 something nice but uneccesary)
+		non gamers use these to play games
+		might wanna add key binding so they work the same as wasd
+	
+////////////////
+
+
+////Done/Canceled//////
+
+X rectangle collisions
+
+V -1/4/2021 - Get Current Build Working With Repl
+  I think it doesn't like the file system I designed for animations.
+    I had made it for personal computers, not repl servers.
+    I think this can be fixed by making it use the local file path instead of the root.
+  
+X Find better alternative to repl.it (how do prof programmers work together?)
+
+V -1/5/21 - Copied files to drive
+
+V - 1/5/21 - Changed update_collision_list() to append to the collission list
+
+ V Comment functions (no priority)
+
+//////////////////////
