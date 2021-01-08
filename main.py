@@ -50,7 +50,7 @@ def point_cursor():
 pygame.init()
 pygame.display.init()
 #sets favicon for the website i think
-pygame.display.set_icon(pygame.image.load("CptnRubyGem.png"))
+pygame.display.set_icon(pygame.image.load("Images/Animations/Player_Idle/tile000.png"))
 pygame.display.set_caption("Game")
 pygame.key.set_repeat(10)
 
