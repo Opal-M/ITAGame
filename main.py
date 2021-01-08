@@ -2,9 +2,10 @@
 import pygame
 import math
 import time
-from sprite import Sprite, Player, update_screen, generate_collision_list
+from environment_sprite import Environment_Sprite, Player, update_screen, generate_collision_list
 import level
 import setup
+import level_sprites
 # from sprite import Player
 #screen settings
 clock = pygame.time.Clock()
@@ -27,14 +28,12 @@ def fly_hero():
         p.y_vel -= (p.y_vel ** 0) * p.y_vel * 0.5
     p.y += p.y_vel
 
-# a temporary function to move the groundplane every frame (call every frame)
-def move_groundplane(x_change):
-    ground_plane.x -= x_change
+
 		
 # draws all sprites and misc. images
 def draw_images():
     setup.screen.blit(background, (0, 0))
-    ground_plane.draw()
+    # ground_plane.draw()
     p.draw()
     pygame.display.flip()
 
@@ -64,8 +63,7 @@ update_screen(setup.screen, setup.SCREEN_WIDTH, setup.SCREEN_HEIGHT)
 background = pygame.image.load("milkyway.png")
 p = Player("Images/Animations/Player_Idle/tile000.png", setup.SCREEN_WIDTH/2, setup.SCREEN_HEIGHT/2)
 # ruby = Sprite("CptnRubyGem.png", 0, 0, False)
-ground_plane = Sprite("Grass.jpg", setup.SCREEN_WIDTH/2, setup.SCREEN_HEIGHT * 1.2, True)
-collision_sprites = [ground_plane]
+# ground_plane = Sprite("Grass.jpg", setup.SCREEN_WIDTH/2, setup.SCREEN_HEIGHT * 1.2, True)
 # update_collision_list(collision_sprites)
 #  for sprites in collision_sprites:
 #     if type(sprites) == Sprite:
@@ -75,12 +73,10 @@ collision_sprites = [ground_plane]
 game_over = False
 not_level1_over = False
 
-block1 = Sprite("Images/Sprites/platform.png", setup.SCREEN_HEIGHT/2, setup.SCREEN_WIDTH/1.5, True)
-level_one_platforms = [block1]
+# block1 = Sprite("Images/Sprites/platform.png", setup.SCREEN_HEIGHT/2, setup.SCREEN_WIDTH/1.5, True)
+# level_one_platforms = [block1]
 
-level1 = level.Level(
-    level_one_platforms
-                     )
+level1 = level.Level(level_sprites.level_one)
 generate_collision_list()
 while not game_over:
   if setup.level == 1:
