@@ -8,10 +8,15 @@ import setup
 # Brings the collision_list from main.py to sprite.py
 # It might be possible to assign collision_list here then import it into main.py
 # but this works for now
+sprite_list = []
 collision_list = []
-def update_collision_list(update):
-    global collision_list
-    collision_list.append(update)
+def generate_collision_list():
+    for sprite in sprite_list:
+        if sprite.has_collision:
+            collision_list.append(sprite)
+# def update_collision_list(update):
+#     global collision_list
+#     collision_list.append(update)
 
 # Brings the screen variable as well as the SCREEN_WIDTH and SCREEN_HEIGHT
 # constansts from main.py to sprite.py
@@ -279,7 +284,8 @@ class Sprite(pygame.sprite.Sprite):
         self.base_image = pygame.image.load(filename)
         self.image = pygame.image.load(filename)
         self.is_visible = True
-        self.has_hitbox = collision
+        self.has_collision = collision
+        sprite_list.append(self)
 
 
         # def scale_relative(self):
