@@ -1,15 +1,15 @@
-from sprite import Sprite, sprite_list
+from environment_sprite import Environment_Sprite, sprite_list
 import pygame
 import setup
 
 
 class Level:
-  def __init__(self, platform_list):
+  def __init__(self, level_list):
     # self.player_health = player_health
     self.background = pygame.image.load("milkyway.png")
-    Sprite("Grass.jpg", setup.SCREEN_HEIGHT/2, setup.SCREEN_WIDTH/0.5)
+    # Sprite("Grass.jpg", setup.SCREEN_HEIGHT/2, setup.SCREEN_WIDTH/0.5)
     # self.platforms_list = platforms_list
-    self.collision_list = []
+    self.collision_list = level_list
 
   def update_platforms_list(self, update):
     global platforms_list

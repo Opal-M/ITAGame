@@ -4,6 +4,7 @@ import os
 import time
 import statistics
 import setup
+import math
 
 # Brings the collision_list from main.py to sprite.py
 # It might be possible to assign collision_list here then import it into main.py
@@ -266,7 +267,12 @@ class Player(pygame.sprite.Sprite):
             # this if limits the speed of the animation
             if time.time() >= self.animation_time + speed:
                 self.base_image = pygame.image.load(animation_dir + "/" + animation_list[self.frame_number])
-                self.scale_relative()
+                base_image_rect = self.base_image.get_rect()
+                self.base_image = pygame.transform.scale(
+                    self.base_image,
+                    (math.floor(base_image_rect.width * 2.5),
+                     math.floor(base_image_rect.height * 2.5))
+                )
                 self.animation_time = time.time()
                 self.frame_number += 1
         else:
@@ -274,15 +280,22 @@ class Player(pygame.sprite.Sprite):
         # print(animation_list[self.frame_number])
 
 # creates the sprite class, used for general sprites
-class Sprite(pygame.sprite.Sprite):
-    def __init__(self, filename, x=0, y=0, collision=False):
+class Environment_Sprite(pygame.sprite.Sprite):
+    def __init__(self, image, x=0, y=0, collision=False):
         pygame.sprite.Sprite.__init__(self)
-        self.x = x
-        self.y = y
+        scale_multiple = 2.5
+        self.x = x * 16 * scale_multiple + (8 * scale_multiple)
+        self.y = y * 16 * scale_multiple + (8 * scale_multiple)
         self.x_vel = 0
         self.y_vel = 0
+        filename = "Images/Environmental_Sprites/" + image
+        print(filename)
         self.base_image = pygame.image.load(filename)
-        self.image = pygame.image.load(filename)
+        base_image_rect = self.base_image.get_rect()
+        self.base_image = pygame.transform.scale(
+            self.base_image,
+            (math.floor(base_image_rect.width * scale_multiple), math.floor(base_image_rect.height * scale_multiple)))
+        self.image = self.base_image
         self.is_visible = True
         self.has_collision = collision
         sprite_list.append(self)
@@ -290,10 +303,10 @@ class Sprite(pygame.sprite.Sprite):
 
         # def scale_relative(self):
         # scales the sprite relative to the screen
-        SCALE_MODIFIER = 500
-        screen_avg = statistics.mean([setup.SCREEN_WIDTH, setup.SCREEN_HEIGHT]) // SCALE_MODIFIER
-        self.base_image = pygame.transform.scale(self.base_image, (
-        self.base_image.get_rect().width * screen_avg, self.base_image.get_rect().height * screen_avg))
+        # SCALE_MODIFIER = 500
+        # screen_avg = statistics.mean([setup.SCREEN_WIDTH, setup.SCREEN_HEIGHT]) // SCALE_MODIFIER
+        # self.base_image = pygame.transform.scale(self.base_image, (
+        # self.base_image.get_rect().width * screen_avg, self.base_image.get_rect().height * screen_avg))
 
     def rotate(self, angle):
         self.image = pygame.transform.rotate(self.base_image, angle)
