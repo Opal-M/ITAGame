@@ -2,9 +2,8 @@
 import pygame
 import math
 import time
-from sprite import Sprite, Player, update_screen
-from sprite import update_collision_list
-import level1
+from sprite import Sprite, Player, update_screen, generate_collision_list
+import level
 import setup
 # from sprite import Player
 #screen settings
@@ -67,7 +66,7 @@ p = Player("Images/Animations/Player_Idle/tile000.png", setup.SCREEN_WIDTH/2, se
 # ruby = Sprite("CptnRubyGem.png", 0, 0, False)
 ground_plane = Sprite("Grass.jpg", setup.SCREEN_WIDTH/2, setup.SCREEN_HEIGHT * 1.2, True)
 collision_sprites = [ground_plane]
-update_collision_list(collision_sprites)
+# update_collision_list(collision_sprites)
 #  for sprites in collision_sprites:
 #     if type(sprites) == Sprite:
 #         sprites.has_hitbox = True
@@ -76,18 +75,22 @@ update_collision_list(collision_sprites)
 game_over = False
 not_level1_over = False
 
-block1 = Sprite("Images/Sprites/platform.png",setup.SCREEN_HEIGHT/2,setup.SCREEN_WIDTH/2)
+block1 = Sprite("Images/Sprites/platform.png", setup.SCREEN_HEIGHT/2, setup.SCREEN_WIDTH/1.5, True)
 level_one_platforms = [block1]
 
-level1 = level1.Level(level_one_platforms)
-
+level1 = level.Level(
+    level_one_platforms
+                     )
+generate_collision_list()
 while not game_over:
   if setup.level == 1:
     level1.game_loop()
   # level2()
   # draw_images()
   p.move_player()
+  p.draw()
     # move_ruby()
+  pygame.display.flip()
   for event in pygame.event.get():
       if event.type == pygame.QUIT:
           game_over = True
