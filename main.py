@@ -61,14 +61,14 @@ update_screen(setup.screen, setup.SCREEN_WIDTH, setup.SCREEN_HEIGHT)
 *                MEDIA
 ***'''
 background = pygame.image.load("Images/background.jpg")
-p = Player("Images/Animations/Player_Idle/tile000.png", setup.SCREEN_WIDTH/2, setup.SCREEN_HEIGHT/2)
+p = Player("Images/Animations/Player_Idle/tile000.png", 35, 0)
 # ruby = Sprite("CptnRubyGem.png", 0, 0, False)
 # ground_plane = Sprite("Grass.jpg", setup.SCREEN_WIDTH/2, setup.SCREEN_HEIGHT * 1.2, True)
 # update_collision_list(collision_sprites)
 #  for sprites in collision_sprites:
 #     if type(sprites) == Sprite:
 #         sprites.has_hitbox = True
-level_sprites.draw_level(1)
+
 
 '''SETUP CODE'''
 game_over = False
@@ -78,8 +78,14 @@ not_level1_over = False
 # level_one_platforms = [block1]
 
 level1 = level.Level(level_sprites.level_one)
+level_sprites.draw_level(1)
 generate_collision_list()
 while not game_over:
+    old_level = setup.level
+    if setup.level != old_level:
+        level_sprites.draw_level(setup.level)
+        generate_collision_list()
+        old_level = setup.level
     if setup.level == 1:
         level1.game_loop()
         

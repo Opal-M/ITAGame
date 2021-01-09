@@ -20,8 +20,10 @@ def draw_level(number):
     if number == 1:
         draw_capped_strip(0,13,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png")
         draw_capped_strip(0,12,32,"Grass_Green_Top_Left.png","Grass_Green_Top_Center.png","Grass_Green_Top_Right.png")
-        draw_capped_strip(10,9,10,"Brick_Center_Left.png","Brick_Center_Center.png","Brick_Center_Right.png")
+        draw_capped_strip(10,9,5,"Brick_Center_Left.png","Brick_Center_Center.png","Brick_Center_Right.png")
         draw_capped_strip(0,14,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png")
         draw_capped_strip(0,15,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png")
         draw_capped_strip(15,6,8,"Brick_Center_Left.png","Brick_Center_Center.png","Brick_Center_Right.png")
-        draw_capped_strip(8,2,5,"Brick_Center_Left.png","Brick_Center_Center.png","Brick_Center_Right.png")
+        draw_capped_strip(8,4,5,"Brick_Center_Left.png","Brick_Center_Center.png","Brick_Center_Right.png")
+        draw_capped_strip(15,2,5,"Brick_Center_Left.png","Brick_Center_Center.png","Brick_Center_Right.png")
+
