@@ -9,8 +9,8 @@ import math
 # Brings the collision_list from main.py to sprite.py
 # It might be possible to assign collision_list here then import it into main.py
 # but this works for now
-sprite_list = []
 collision_list = []
+sprite_list = []
 def generate_collision_list():
     for sprite in sprite_list:
         if sprite.has_collision:
