@@ -60,7 +60,7 @@ update_screen(setup.screen, setup.SCREEN_WIDTH, setup.SCREEN_HEIGHT)
 **
 *                MEDIA
 ***'''
-background = pygame.image.load("milkyway.png")
+background = pygame.image.load("Images/background.jpg")
 p = Player("Images/Animations/Player_Idle/tile000.png", setup.SCREEN_WIDTH/2, setup.SCREEN_HEIGHT/2)
 # ruby = Sprite("CptnRubyGem.png", 0, 0, False)
 # ground_plane = Sprite("Grass.jpg", setup.SCREEN_WIDTH/2, setup.SCREEN_HEIGHT * 1.2, True)

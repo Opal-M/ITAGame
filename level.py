@@ -6,7 +6,7 @@ import setup
 class Level:
   def __init__(self, level_list):
     # self.player_health = player_health
-    self.background = pygame.image.load("milkyway.png")
+    self.background = pygame.image.load("Images/background.jpg")
     # Sprite("Grass.jpg", setup.SCREEN_HEIGHT/2, setup.SCREEN_WIDTH/0.5)
     # self.platforms_list = platforms_list
     self.collision_list = level_list
