@@ -22,6 +22,7 @@ class Level:
 
   def logic(self):
     pass
+    #if Player.x > dlkhg
     #if player is hit by enemy:
       #health -= 1
     #if ending is_touching player:
