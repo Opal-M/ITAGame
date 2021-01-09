@@ -60,7 +60,7 @@ update_screen(setup.screen, setup.SCREEN_WIDTH, setup.SCREEN_HEIGHT)
 **
 *                MEDIA
 ***'''
-background = pygame.image.load("milkyway.png")
+background = pygame.image.load("Images/background.jpg")
 p = Player("Images/Animations/Player_Idle/tile000.png", setup.SCREEN_WIDTH/2, setup.SCREEN_HEIGHT/2)
 # ruby = Sprite("CptnRubyGem.png", 0, 0, False)
 # ground_plane = Sprite("Grass.jpg", setup.SCREEN_WIDTH/2, setup.SCREEN_HEIGHT * 1.2, True)
@@ -68,6 +68,7 @@ p = Player("Images/Animations/Player_Idle/tile000.png", setup.SCREEN_WIDTH/2, se
 #  for sprites in collision_sprites:
 #     if type(sprites) == Sprite:
 #         sprites.has_hitbox = True
+level_sprites.draw_level(1)
 
 '''SETUP CODE'''
 game_over = False
@@ -79,21 +80,22 @@ not_level1_over = False
 level1 = level.Level(level_sprites.level_one)
 generate_collision_list()
 while not game_over:
-  if setup.level == 1:
-    level1.game_loop()
+    if setup.level == 1:
+        level1.game_loop()
+        
   # level2()
   # draw_images()
-  p.move_player()
-  p.draw()
+    p.move_player()
+    p.draw()
     # move_ruby()
-  pygame.display.flip()
-  for event in pygame.event.get():
-      if event.type == pygame.QUIT:
-          game_over = True
-      elif event.type == pygame.MOUSEBUTTONDOWN:
-          mouse_pos = pygame.mouse.get_pos()
-          print("Mouse clicked at", mouse_pos)
-  clock.tick(60)
+    pygame.display.flip()
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            game_over = True
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            mouse_pos = pygame.mouse.get_pos()
+            print("Mouse clicked at", mouse_pos)
+    clock.tick(60)
 
 pygame.quit()
 print("Game Ended")
