@@ -14,6 +14,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1mkoP7AxOrQQN4CxdBNiLfDTBeW" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -70,26 +73,26 @@
       <screen x="0" y="0" width="1848" height="1080" />
     </state>
     <state x="315" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1848.1080/1920.0.1080.1880@0.0.1848.1080" timestamp="1610077723881" />
-    <state width="1827" height="222" key="GridCell.Tab.0.bottom" timestamp="1610078530238">
+    <state width="1827" height="222" key="GridCell.Tab.0.bottom" timestamp="1610259664726">
       <screen x="0" y="0" width="1848" height="1080" />
     </state>
-    <state width="1827" height="222" key="GridCell.Tab.0.bottom/0.0.1848.1080/1920.0.1080.1880@0.0.1848.1080" timestamp="1610078530238" />
-    <state width="1827" height="222" key="GridCell.Tab.0.center" timestamp="1610078530238">
+    <state width="1827" height="222" key="GridCell.Tab.0.bottom/0.0.1848.1080/1920.0.1080.1880@0.0.1848.1080" timestamp="1610259664726" />
+    <state width="1827" height="222" key="GridCell.Tab.0.center" timestamp="1610259664725">
       <screen x="0" y="0" width="1848" height="1080" />
     </state>
-    <state width="1827" height="222" key="GridCell.Tab.0.center/0.0.1848.1080/1920.0.1080.1880@0.0.1848.1080" timestamp="1610078530238" />
-    <state width="1827" height="222" key="GridCell.Tab.0.left" timestamp="1610078530238">
+    <state width="1827" height="222" key="GridCell.Tab.0.center/0.0.1848.1080/1920.0.1080.1880@0.0.1848.1080" timestamp="1610259664725" />
+    <state width="1827" height="222" key="GridCell.Tab.0.left" timestamp="1610259664725">
       <screen x="0" y="0" width="1848" height="1080" />
     </state>
-    <state width="1827" height="222" key="GridCell.Tab.0.left/0.0.1848.1080/1920.0.1080.1880@0.0.1848.1080" timestamp="1610078530238" />
-    <state width="1827" height="222" key="GridCell.Tab.0.right" timestamp="1610078530238">
+    <state width="1827" height="222" key="GridCell.Tab.0.left/0.0.1848.1080/1920.0.1080.1880@0.0.1848.1080" timestamp="1610259664725" />
+    <state width="1827" height="222" key="GridCell.Tab.0.right" timestamp="1610259664725">
       <screen x="0" y="0" width="1848" height="1080" />
     </state>
-    <state width="1827" height="222" key="GridCell.Tab.0.right/0.0.1848.1080/1920.0.1080.1880@0.0.1848.1080" timestamp="1610078530238" />
-    <state x="620" y="363" key="com.intellij.ide.util.TipDialog" timestamp="1610068244468">
+    <state width="1827" height="222" key="GridCell.Tab.0.right/0.0.1848.1080/1920.0.1080.1880@0.0.1848.1080" timestamp="1610259664725" />
+    <state x="620" y="363" key="com.intellij.ide.util.TipDialog" timestamp="1610256222501">
       <screen x="0" y="0" width="1848" height="1080" />
     </state>
-    <state x="620" y="363" key="com.intellij.ide.util.TipDialog/0.0.1848.1080/1920.0.1080.1880@0.0.1848.1080" timestamp="1610068244468" />
+    <state x="620" y="363" key="com.intellij.ide.util.TipDialog/0.0.1848.1080/1920.0.1080.1880@0.0.1848.1080" timestamp="1610256222501" />
     <state x="665" y="183" key="refactoring.ChangeSignatureDialog" timestamp="1610049513569">
       <screen x="0" y="0" width="1848" height="1080" />
     </state>

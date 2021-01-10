@@ -2,7 +2,8 @@
 import pygame
 import math
 import time
-from environment_sprite import Environment_Sprite, Player, update_screen, generate_collision_list
+from environment_sprite import Player, update_screen, generate_collision_list
+import Media
 import level
 import setup
 import level_sprites
@@ -20,28 +21,28 @@ clock = pygame.time.Clock()
 def fly_hero():
     active_keys = pygame.key.get_pressed()
     if active_keys[pygame.K_w]:
-        if setup.p.setup.p.y_vel > -10:
-            setup.p.setup.p.y_vel -= 1
+        if Media.p.Media.p.y_vel > -10:
+            Media.p.Media.p.y_vel -= 1
     elif active_keys[pygame.K_s]:
-        if setup.p.setup.p.y_vel < 10:
-            setup.p.y_vel += 1
-    elif setup.p.y_vel != 0:
-        setup.p.y_vel -= (setup.p.y_vel ** 0) * setup.p.y_vel * 0.5
-    setup.p.y += setup.p.y_vel
+        if Media.p.Media.p.y_vel < 10:
+            Media.p.y_vel += 1
+    elif Media.p.y_vel != 0:
+        Media.p.y_vel -= (Media.p.y_vel ** 0) * Media.p.y_vel * 0.5
+    Media.p.y += Media.p.y_vel
 
 
 		
 # draws all sprites and misc. images
 def draw_images():
-    setup.p.screen.blit(background, (0, 0))
+    Media.p.screen.blit(background, (0, 0))
     # ground_plane.draw()
-    setup.p.draw()
+    Media.p.draw()
     pygame.display.flip()
 
 # points the sprite in the direction of the cursor
 def point_cursor():
-    relative_angle = math.atan2(pygame.mouse.get_pos()[1] - setup.p.y, pygame.mouse.get_pos()[0] - setup.p.x)*(180/math.pi)+90
-    setup.p.rotate(-relative_angle)
+    relative_angle = math.atan2(pygame.mouse.get_pos()[1] - Media.p.y, pygame.mouse.get_pos()[0] - Media.p.x)*(180/math.pi)+90
+    Media.p.rotate(-relative_angle)
 
 
 '''
@@ -55,7 +56,7 @@ pygame.display.set_icon(pygame.image.load("Images/Animations/Player_Idle/tile000
 pygame.display.set_caption("Game")
 pygame.key.set_repeat(10)
 
-update_screen(setup.p.screen, setup.p.SCREEN_WIDTH, setup.p.SCREEN_HEIGHT)
+# update_screen(Media.p.screen, Media.p.SCREEN_WIDTH, Media.p.SCREEN_HEIGHT)
 
 '''
 **
@@ -64,7 +65,7 @@ update_screen(setup.p.screen, setup.p.SCREEN_WIDTH, setup.p.SCREEN_HEIGHT)
 background = pygame.image.load("Images/background.jpg")
 p = Player("Images/Animations/Player_Idle/tile000.png", 35, 0)
 # ruby = Sprite("CptnRubyGem.png", 0, 0, False)
-# ground_plane = Sprite("Grass.jpg", setusetup.p.SCREEN_WIDTH/2, setusetup.p.SCREEN_HEIGHT * 1.2, True)
+# ground_plane = Sprite("Grass.jpg", setuMedia.p.SCREEN_WIDTH/2, setuMedia.p.SCREEN_HEIGHT * 1.2, True)
 # update_collision_list(collision_sprites)
 #  for sprites in collision_sprites:
 #     if type(sprites) == Sprite:
@@ -75,30 +76,29 @@ p = Player("Images/Animations/Player_Idle/tile000.png", 35, 0)
 game_over = False
 not_level1_over = False
 
-# block1 = Sprite("Images/Sprites/platform.png", setusetup.p.SCREEN_HEIGHT/2, setusetup.p.SCREEN_WIDTH/1.5, True)
+# block1 = Sprite("Images/Sprites/platform.png", setuMedia.p.SCREEN_HEIGHT/2, setuMedia.p.SCREEN_WIDTH/1.5, True)
 # level_one_platforms = [block1]
 
 level1 = level.Level(level_sprites.level_one)
 level2 = level.Level2(level_sprites.level_two)
-object_sprite = object_sprite.Object_Sprite("Fruit_Strawberry/tile004.png")
 level_sprites.draw_level(1)
 generate_collision_list()
 while not game_over:
-    object_sprite.fruit_game_loop(Player)
-    old_level = setup.p.level
-    if setup.p.level != old_level:
-        level_sprites.draw_level(setup.p.level)
+    level_sprites.strawberry.fruit_game_loop(Player)
+    old_level = setup.level
+    if setup.level != old_level:
+        level_sprites.draw_level(setup.level)
         generate_collision_list()
-        old_level = setup.p.level +1
-    if setup.p.level == 1:
+        old_level = setup.level + 1
+    if setup.level == 1:
         level1.game_loop()
-    if setup.p.level == 2:
+    elif setup.level == 2:
         level2.game_loop()
 
   # level2()
   # draw_images()
-    setup.p.move_player()
-    setup.p.draw()
+    Media.p.move_player()
+    Media.p.draw()
     # move_ruby()
     pygame.display.flip()
     for event in pygame.event.get():

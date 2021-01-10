@@ -1,6 +1,9 @@
 import pygame
 from environment_sprite import Environment_Sprite
 from object_sprite import Object_Sprite
+import Media
+
+strawberry = Object_Sprite("Fruit_Strawberry/tile004.png", 18, 1, True)
 
 level_one = [
 # Sprite("Grass_Top_1.png", 0, 0, True),
@@ -36,7 +39,7 @@ def draw_level(number):
         #4th
         draw_capped_strip(15,2,5,"Brick_Center_Left.png","Brick_Center_Center.png","Brick_Center_Right.png")
         #end zone
-        level_one.append(Object_Sprite("Fruit_Strawberry/tile004.png", 18, 1, True))
+        level_one.append(strawberry)
     elif number == 2:
         pass    
 

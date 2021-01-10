@@ -5,6 +5,7 @@ import time
 import statistics
 from setup import SCREEN_HEIGHT, SCREEN_HEIGHT
 import math
+import setup
 
 # Brings the collision_list from main.py to sprite.py
 # It might be possible to assign collision_list here then import it into main.py
@@ -32,8 +33,9 @@ def update_screen(input_screen, input_SCREEN_WIDTH, input_SCREEN_HEIGHT):
 class Player(pygame.sprite.Sprite):
     def __init__(self, filename, x=0, y=0):
         pygame.sprite.Sprite.__init__(self)
-        self.x = x
-        self.y = y
+        scale_multiple = 2.5
+        self.x = x * 16 * scale_multiple + (8 * scale_multiple)
+        self.y = y * 16 * scale_multiple + (8 * scale_multiple)
         self.jump_timer = 0
         self.x_vel = 0
         self.y_vel = 0
@@ -74,9 +76,18 @@ class Player(pygame.sprite.Sprite):
             elif self.jump_strike == 1:
                 self.jump_lock = True
         if (active_keys[pygame.K_a] or active_keys[pygame.K_d]) and - self.x_speed_limit < self.x_vel < self.x_speed_limit:
-            if active_keys[pygame.K_a]:
+            self.rect = self.base_image.get_rect()
+            move_left_requirement = self.x + self.x_vel > 0 + (self.rect.width/2)
+            move_right_requiremnet = self.x + self.x_vel + (self.rect.width/2) < setup.SCREEN_WIDTH
+            if not move_left_requirement:
+                self.x_vel = 0
+                self.x = self.rect.width/2 - 5
+            if not move_right_requiremnet:
+                self.x_vel = 0
+                self.x = setup.SCREEN_WIDTH - (self.rect.width/2) + 5
+            if active_keys[pygame.K_a] and move_left_requirement:
                 self.x_vel -= 3
-            if active_keys[pygame.K_d]:
+            if active_keys[pygame.K_d] and move_right_requiremnet:
                 self.x_vel += 3
 
         elif self.x_vel != 0:
@@ -289,7 +300,6 @@ class Environment_Sprite(pygame.sprite.Sprite):
         self.x_vel = 0
         self.y_vel = 0
         filename = "Images/Environmental_Sprites/" + image
-        print(filename)
         self.base_image = pygame.image.load(filename)
         base_image_rect = self.base_image.get_rect()
         self.base_image = pygame.transform.scale(
