@@ -83,6 +83,7 @@ title_screen_class = level.Level(level_sprites.title_screen)
 level1 = level.Level(level_sprites.level_one)
 
 level2 = level.Level(level_sprites.level_two)
+level4 = level.Level(level_sprites.level_four)
 #i think this is right but it might need to be Level2
 level_sprites.draw_levelx(setup.level)
 
@@ -103,6 +104,10 @@ while not game_over:
             level_list = level_sprites.level_two
         elif setup.level == 3:
             level_list = level_sprites.level_three
+        elif setup.level == 4:
+            level_list = level_sprites.level_four
+    
+        level_list = level_sprites.level_four
         generate_collision_list(level_list)
         old_level = setup.level
     if setup.level == 0:
@@ -112,10 +117,17 @@ while not game_over:
         for base_image in level_sprites.title_screen:
             base_image.is_visible = False
             base_image.has_collision = False
+
            
 
     elif setup.level == 2:
         level2.game_loop()
+
+    elif setup.level == 4: 
+        level_sprites.strawberry.x = (5 * 40) + 20
+        level_sprites.strawberry.y = (1 * 40) + 20
+        level4.game_loop()
+
     Media.p.move_player()
     Media.p.draw()
     # move_ruby()
