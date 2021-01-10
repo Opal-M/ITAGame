@@ -2,7 +2,7 @@
 import pygame
 import math
 import time
-from environment_sprite import Player, update_screen, generate_collision_list, sprite_list, collision_list
+from environment_sprite import Player, update_screen, generate_collision_list, sprite_list, generate_collision_list
 import Media
 import level
 import setup
@@ -79,7 +79,7 @@ not_level1_over = False
 # block1 = Sprite("Images/Sprites/platform.png", setuMedia.p.SCREEN_HEIGHT/2, setuMedia.p.SCREEN_WIDTH/1.5, True)
 # level_one_platforms = [block1]
 
-title_screen = level.Level(level_sprites.title_screen)
+title_screen_class = level.Level(level_sprites.title_screen)
 level1 = level.Level(level_sprites.level_one)
 
 level2 = level.Level(level_sprites.level_two)
@@ -95,13 +95,12 @@ while not game_over:
         generate_collision_list()
         old_level = setup.level
     if setup.level == 0:
-        title_screen.game_loop()
+        title_screen_class.game_loop()
     elif setup.level == 1:
-        for image in sprite_list:
-            image.is_visible = False
-        sprite_list.clear()
-        collision_list.clear()
         level1.game_loop()
+        for image in level_sprites.title_screen:
+            image.is_visible = False
+            image.has_collision = False
     elif setup.level == 2:
         level2.game_loop()
     Media.p.move_player()

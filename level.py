@@ -1,4 +1,4 @@
-from environment_sprite import Environment_Sprite, sprite_list
+from environment_sprite import Environment_Sprite, sprite_list, generate_collitision_list
 import pygame
 import setup
 

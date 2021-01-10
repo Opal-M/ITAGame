@@ -1,5 +1,5 @@
 import pygame
-from environment_sprite import Environment_Sprite
+from environment_sprite import Environment_Sprite, generate_collision_list()
 from object_sprite import Object_Sprite
 import Media
 from environment_sprite import sprite_list
@@ -72,6 +72,7 @@ def draw_levelx(number):
       draw_capped_stripx(2,6,28,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png","title_screen")
       #end zone
       title_screen.append(Object_Sprite("Fruit_Strawberry/tile004.png", 30, 10, False))
+      generate_collision_list()
     if number == 1:
       #ground
       draw_capped_stripx(0,13,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png","level_one")
@@ -88,6 +89,7 @@ def draw_levelx(number):
       draw_capped_stripx(15,2,5,"Brick_Center_Left.png","Brick_Center_Center.png","Brick_Center_Right.png","level_one")
       #end zone
       level_one.append(strawberry)
+      generate_collision_list()
     if number == 2:
       #ground
       draw_capped_stripx(0,13,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png","level_two")
