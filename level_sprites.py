@@ -3,7 +3,7 @@ from environment_sprite import Environment_Sprite, generate_collision_list,sprit
 from object_sprite import Object_Sprite
 import Media
 
-strawberry = Object_Sprite("Fruit_Strawberry/tile004.png", 18, 1)
+strawberry = Object_Sprite("Fruit_Strawberry/tile004.png", 25, 10)
 title_screen = []
 level_one = []
 level_two = []
@@ -19,9 +19,6 @@ level_two = []
   #for number in range(0,length):
       #blist.append(Environment_Sprite(image, x+number, y, True))
 def draw_capped_stripx(x,y,length,start,middle,end,blist):
- #print (type(blist))
-  #blist = list(blist)
-  #print (type(blist))
   global title_screen, level_one, level_two
   blist.append(Environment_Sprite(start, x, y, True))
   for number in range(1,length):
@@ -29,9 +26,8 @@ def draw_capped_stripx(x,y,length,start,middle,end,blist):
   blist.append(Environment_Sprite(end, x+(length-1), y, True))
 def draw_levelx(number):
     if number == 0:
-      draw_capped_stripx(0,13,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png",title_screen)
-      draw_capped_stripx(0,12,32,"Grass_Green_Top_Left.png","Grass_Green_Top_Center.png","Grass_Green_Top_Right.png",title_screen)
-      draw_capped_stripx(0,14,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png",title_screen)
+      #ground
+      draw_capped_stripx(0,14,32,"Grass_Green_Top_Left.png","Grass_Green_Top_Center.png","Grass_Green_Top_Right.png",title_screen)
       draw_capped_stripx(0,15,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png",title_screen)
       #T
       draw_capped_stripx(2,2,3,"Bronze_Bar_Left.png","Bronze_Bar_Horizontal.png","Bronze_Bar_Right.png",title_screen)
@@ -71,33 +67,56 @@ def draw_levelx(number):
       #_
       draw_capped_stripx(2,6,28,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",title_screen)
       #end zone
-      title_screen.append(Environment_Sprite("Grass_Pink_Bottom_Right.png", 20, 10, False))
-      title_screen.append(Object_Sprite("Fruit_Strawberry/tile004.png", 30, 10, False))
       print (title_screen)
       generate_collision_list()
     if number == 1:
       #ground
-      title_screen.append(Environment_Sprite("Grass_Pink_Bottom_Right.png", 25, 10, False))
-      draw_capped_stripx(0,13,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png",level_one)
-      draw_capped_stripx(0,12,32,"Grass_Green_Top_Left.png","Grass_Green_Top_Center.png","Grass_Green_Top_Right.png",level_one)
-      draw_capped_stripx(0,14,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png",level_one)
+      draw_capped_stripx(0,14,32,"Grass_Green_Top_Left.png","Grass_Green_Top_Center.png","Grass_Green_Top_Right.png",level_one)
       draw_capped_stripx(0,15,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png",level_one)
       #first platform
-      draw_capped_stripx(10,9,5,"Brick_Center_Left.png","Brick_Center_Center.png","Brick_Center_Right.png",level_one)
+      draw_capped_stripx(10,11,5,"Brick_Center_Left.png","Brick_Center_Center.png","Brick_Center_Right.png",level_one)
       #2nd
-      draw_capped_stripx(15,6,8,"Brick_Center_Left.png","Brick_Center_Center.png","Brick_Center_Right.png",level_one)
+      draw_capped_stripx(15,8,8,"Brick_Center_Left.png","Brick_Center_Center.png","Brick_Center_Right.png",level_one)
       #3rd
-      draw_capped_stripx(8,4,5,"Brick_Center_Left.png","Brick_Center_Center.png","Brick_Center_Right.png",level_one)
+      draw_capped_stripx(8,6,5,"Brick_Center_Left.png","Brick_Center_Center.png","Brick_Center_Right.png",level_one)
       #4th
-      draw_capped_stripx(15,2,5,"Brick_Center_Left.png","Brick_Center_Center.png","Brick_Center_Right.png",level_one)
+      draw_capped_stripx(15,4,5,"Brick_Center_Left.png","Brick_Center_Center.png","Brick_Center_Right.png",level_one)
       #end zone
       level_one.append(strawberry)
       generate_collision_list()
     if number == 2:
       #ground
-      draw_capped_stripx(0,13,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png",level_two)
-      draw_capped_stripx(0,12,32,"Grass_Green_Top_Left.png","Grass_Green_Top_Center.png","Grass_Green_Top_Right.png",level_two)
-      draw_capped_stripx(0,14,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png",level_two)
-      draw_capped_stripx(0,15,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png",level_two)
-      #end zone
-      level2.append(Object_Sprite("Fruit_Strawberry/tile004.png", 30, 10, False))
+      draw_capped_stripx(0,14,32,"Copper_Bar_Left.png","Copper_Bar_Horizontal.png","Copper_Bar_Right.png",level_two)
+      draw_capped_stripx(0,15,32,"Copper_Bar_Left.png","Copper_Bar_Horizontal.png","Copper_Bar_Right.png",level_two)
+      #first platform
+      draw_capped_stripx(5,11,3,"Metal_Bar_Left.png","Metal_Bar_Horizontal.png","Metal_Bar_Right.png",level_two)
+      draw_capped_stripx(7,10,1,"Metal_Bar_Vertical.png","Metal_Bar_Vertical.png","Metal_Bar_Vertical.png",level_two)
+      draw_capped_stripx(7,9,2,"Metal_Bar_Left.png","Metal_Bar_Right.png","Metal_Bar_Right.png",level_two)
+      #second platform
+      draw_capped_stripx(13,7,3,"Bronze_Bar_Left.png","Bronze_Bar_Horizontal.png","Bronze_Bar_Right.png",level_two)
+      draw_capped_stripx(15,6,1,"Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png",level_two)
+      draw_capped_stripx(15,5,1,"Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png",level_two)
+      draw_capped_stripx(15,4,1,"Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png",level_two)
+      draw_capped_stripx(15,3,1,"Bronze_Bar_Top.png","Bronze_Bar_Top.png","Bronze_Bar_Top.png",level_two)
+      #third platform
+      draw_capped_stripx(4,4,1,"Gold_Solid.png","Gold_Solid.png","Gold_Solid.png",level_two)
+      #fourth platform
+      draw_capped_stripx(26,4,1,"Gold_Bar_Top.png","Gold_Bar_Top.png","Gold_Bar_Top.png",level_two)
+      draw_capped_stripx(26,5,1,"Gold_Semi_Solid_Vertical.png","Gold_Semi_Solid_Vertical.png","Gold_Semi_Solid_Vertical.png",level_two)
+      draw_capped_stripx(26,6,1,"Gold_Bar_Bottom.png","Gold_Bar_Bottom.png","Gold_Bar_Bottom.png",level_two)
+      draw_capped_stripx(24,3,1,"Bronze_Bar_Top.png","Bronze_Bar_Top.png","Bronze_Bar_Top.png",level_two)
+      draw_capped_stripx(24,4,1,"Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png",level_two)
+      draw_capped_stripx(24,5,1,"Bronze_Bar_Bottom.png","Bronze_Bar_Bottom.png","Bronze_Bar_Bottom.png",level_two)
+      draw_capped_stripx(22,2,1,"Metal_Bar_Top.png","Metal_Bar_Top.png","Metal_Bar_Top.png",level_two)
+      draw_capped_stripx(22,3,1,"Metal_Bar_Vertical.png","Metal_Bar_Vertical.png","Metal_Bar_Vertical.png",level_two)
+      draw_capped_stripx(22,4,1,"Metal_Bar_Bottom.png","Metal_Bar_Bottom.png","Metal_Bar_Bottom.png",level_two)
+      draw_capped_stripx(20,1,1,"Copper_Bar_Top.png","Copper_Bar_Top.png","Copper_Bar_Top.png",level_two)
+      draw_capped_stripx(20,2,1,"Copper_Bar_Vertical.png","Copper_Bar_Vertical.png","Copper_Bar_Vertical.png",level_two)
+      draw_capped_stripx(20,3,1,"Copper_Bar_Bottom.png","Copper_Bar_Bottom.png","Copper_Bar_Bottom.png",level_two)
+      #final platform
+      draw_capped_stripx(29,13,1,"Copper_Bar_Bottom.png","Copper_Bar_Bottom.png","Copper_Bar_Bottom.png",level_two)
+      draw_capped_stripx(29,12,1,"Copper_Bar_Vertical.png","Copper_Bar_Vertical.png","Copper_Bar_Vertical.png",level_two)
+      draw_capped_stripx(29,11,1,"Copper_Bar_Vertical.png","Copper_Bar_Vertical.png","Copper_Bar_Vertical.png",level_two)
+      draw_capped_stripx(29,10,1,"Copper_Bar_Vertical.png","Copper_Bar_Vertical.png","Copper_Bar_Vertical.png",level_two)
+      draw_capped_stripx(29,9,1,"Copper_Bar_Top.png","Copper_Bar_Top.png","Copper_Bar_Top.png",level_two)
+      #end zoned

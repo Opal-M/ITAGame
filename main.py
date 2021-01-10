@@ -2,7 +2,7 @@
 import pygame
 import math
 import time
-from environment_sprite import Player, update_screen, generate_collision_list, sprite_list 
+from environment_sprite import Player, update_screen, generate_collision_list, sprite_list, collision_list
 import Media
 import level
 import setup
@@ -83,16 +83,30 @@ title_screen_class = level.Level(level_sprites.title_screen)
 level1 = level.Level(level_sprites.level_one)
 
 level2 = level.Level(level_sprites.level_two)
+
 #i think this is right but it might need to be Level2
 level_sprites.draw_levelx(setup.level)
 
 generate_collision_list()
+old_level = setup.level
 while not game_over:
     level_sprites.strawberry.fruit_game_loop(Player)
-    old_level = setup.level
     if setup.level != old_level:
         level_sprites.draw_levelx(setup.level)
-        generate_collision_list()
+        collision_list.clear()
+        if setup.level == 0:
+            level_list = level_sprites.title_screen
+        elif setup.level == 1:
+            level_list = level_sprites.level_one
+            # multiply by 60
+            level_sprites.strawberry.x = 17 * 60
+        elif setup.level == 2:
+            level_list = level_sprites.level_two
+            level_sprites.strawberry.x = (30.5 * 40) + 20
+            level_sprites.strawberry.y = (13 * 40) + 20
+        elif setup.level == 3:
+            level_list = level_sprites.level_three
+        generate_collision_list(level_list)
         old_level = setup.level
     if setup.level == 0:
         title_screen_class.game_loop()
