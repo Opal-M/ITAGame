@@ -3,7 +3,7 @@ from environment_sprite import Environment_Sprite, generate_collision_list,sprit
 from object_sprite import Object_Sprite
 import Media
 
-strawberry = Object_Sprite("Fruit_Strawberry/tile004.png", 18, 1)
+strawberry = Object_Sprite("Fruit_Strawberry/tile004.png", 25, 10)
 title_screen = []
 level_one = []
 level_two = []
@@ -19,9 +19,6 @@ level_two = []
   #for number in range(0,length):
       #blist.append(Environment_Sprite(image, x+number, y, True))
 def draw_capped_stripx(x,y,length,start,middle,end,blist):
- #print (type(blist))
-  #blist = list(blist)
-  #print (type(blist))
   global title_screen, level_one, level_two
   blist.append(Environment_Sprite(start, x, y, True))
   for number in range(1,length):
@@ -71,13 +68,10 @@ def draw_levelx(number):
       #_
       draw_capped_stripx(2,6,28,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",title_screen)
       #end zone
-      title_screen.append(Environment_Sprite("Grass_Pink_Bottom_Right.png", 20, 10, False))
-      title_screen.append(Object_Sprite("Fruit_Strawberry/tile004.png", 30, 10, False))
       print (title_screen)
       generate_collision_list()
     if number == 1:
       #ground
-      title_screen.append(Environment_Sprite("Grass_Pink_Bottom_Right.png", 25, 10, False))
       draw_capped_stripx(0,13,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png",level_one)
       draw_capped_stripx(0,12,32,"Grass_Green_Top_Left.png","Grass_Green_Top_Center.png","Grass_Green_Top_Right.png",level_one)
       draw_capped_stripx(0,14,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png",level_one)
@@ -99,5 +93,4 @@ def draw_levelx(number):
       draw_capped_stripx(0,12,32,"Grass_Green_Top_Left.png","Grass_Green_Top_Center.png","Grass_Green_Top_Right.png",level_two)
       draw_capped_stripx(0,14,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png",level_two)
       draw_capped_stripx(0,15,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png",level_two)
-      #end zone
-      level2.append(Object_Sprite("Fruit_Strawberry/tile004.png", 30, 10, False))
+      #end zoned

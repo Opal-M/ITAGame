@@ -12,8 +12,8 @@ import setup
 # but this works for now
 collision_list = []
 sprite_list = []
-def generate_collision_list():
-    for sprite in sprite_list:
+def generate_collision_list(current_level=sprite_list):
+    for sprite in current_level:
         if sprite.has_collision:
             collision_list.append(sprite)
 # def update_collision_list(update):
