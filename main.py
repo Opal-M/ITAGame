@@ -2,7 +2,7 @@
 import pygame
 import math
 import time
-from environment_sprite import Player, update_screen, generate_collision_list, sprite_list, generate_collision_list
+from environment_sprite import Player, update_screen, generate_collision_list, sprite_list 
 import Media
 import level
 import setup
@@ -98,9 +98,11 @@ while not game_over:
         title_screen_class.game_loop()
     elif setup.level == 1:
         level1.game_loop()
-        for image in level_sprites.title_screen:
-            image.is_visible = False
-            image.has_collision = False
+        for base_image in level_sprites.title_screen:
+            base_image.is_visible = False
+            base_image.has_collision = False
+           
+
     elif setup.level == 2:
         level2.game_loop()
     Media.p.move_player()
