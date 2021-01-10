@@ -35,13 +35,6 @@ class Level:
       self.logic()
 
 class Level1:
-  from level_sprites import draw_strip
   def __init__(self,variable):
     self.self = self
     self.variable = variable
-  def draw_stuff(self):
-    draw_strip(0,13,32,"Grass_Green_Center_Center.png")
-    draw_strip(0,12,32,"Grass_Green_Top_Center.png")
-    draw_strip(10,9,10,"Brick_Center_Center.png")
-    draw_strip(0,14,32,"Grass_Green_Center_Center.png")
-    draw_strip(0,15,32,"Grass_Green_Center_Center.png")
