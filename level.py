@@ -34,7 +34,10 @@ class Level:
       self.draw_background()
       self.logic()
 
+    
 class Level1:
   def __init__(self,variable):
     self.self = self
-    self.variable = variable
+class Level2:
+  def __init__(self,variable):
+    self.self = self

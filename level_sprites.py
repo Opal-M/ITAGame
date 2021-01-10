@@ -1,6 +1,9 @@
 import pygame
 from environment_sprite import Environment_Sprite
 from object_sprite import Object_Sprite
+import Media
+
+strawberry = Object_Sprite("Fruit_Strawberry/tile004.png", 18, 1, True)
 title_screen = []
 level_one = []
 level_two = []
@@ -83,7 +86,7 @@ def draw_levelx(number):
       #4th
       draw_capped_stripx(15,2,5,"Brick_Center_Left.png","Brick_Center_Center.png","Brick_Center_Right.png","level_one")
       #end zone
-      level_one.append(Object_Sprite("Fruit_Strawberry/tile004.png", 18, 1, False))
+      level_one.append(strawberry)
     if number == 2:
       #ground
       draw_capped_stripx(0,13,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png","level_two")
