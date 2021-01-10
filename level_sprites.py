@@ -2,11 +2,9 @@ import pygame
 from environment_sprite import Environment_Sprite
 from object_sprite import Object_Sprite
 title_screen = []
-level_one = [
-# Sprite("Grass_Top_1.png", 0, 0, True),
-# Sprite("Grass_Top_1.png", 0, 1, True)
-]
-level2 = []
+level_one = []
+level_two = []
+
 # for number in range(0, 32):
 #     level_one.append(Environment_Sprite("Grass_Green_Center_Center.png",number , 13 , True))
 # for number in range(0, 32):
@@ -14,14 +12,17 @@ level2 = []
 
 #ATTENTION FOR THE BRONZE SPRITES I MISSPELLED VERTICLE USE THE WORD 'veritical'
 
-def draw_stripx(x,y,length,image,blist):
-    for number in range(0,length):
-        blist.append(Environment_Sprite(image, x+number, y, True))
+#def draw_stripx(x,y,length,image,blist=[]):
+  #for number in range(0,length):
+      #blist.append(Environment_Sprite(image, x+number, y, True))
 def draw_capped_stripx(x,y,length,start,middle,end,blist):
-    blist.append(Environment_Sprite(start, x, y, True))
-    for number in range(1,length):
-        blist.append(Environment_Sprite(middle, x+number, y, True))
-    blist.append(Environment_Sprite(end, x+(length-1), y, True))
+  print (type(blist))
+  blist = list(blist)
+  print (type(blist))
+  blist.append(Environment_Sprite(start, x, y, True))
+  for number in range(1,length):
+    blist.append(Environment_Sprite(middle, x+number, y, True))
+  blist.append(Environment_Sprite(end, x+(length-1), y, True))
 def draw_levelx(number):
     if number == 0:
       draw_capped_stripx(0,13,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png","title_screen")
@@ -85,9 +86,9 @@ def draw_levelx(number):
       level_one.append(Object_Sprite("Fruit_Strawberry/tile004.png", 18, 1, False))
     if number == 2:
       #ground
-      draw_capped_stripx(0,13,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png","level2")
-      draw_capped_stripx(0,12,32,"Grass_Green_Top_Left.png","Grass_Green_Top_Center.png","Grass_Green_Top_Right.png","level2")
-      draw_capped_stripx(0,14,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png","level2")
-      draw_capped_stripx(0,15,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png","level2")
+      draw_capped_stripx(0,13,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png","level_two")
+      draw_capped_stripx(0,12,32,"Grass_Green_Top_Left.png","Grass_Green_Top_Center.png","Grass_Green_Top_Right.png","level_two")
+      draw_capped_stripx(0,14,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png","level_two")
+      draw_capped_stripx(0,15,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png","level_two")
       #end zone
       level2.append(Object_Sprite("Fruit_Strawberry/tile004.png", 30, 10, False))
