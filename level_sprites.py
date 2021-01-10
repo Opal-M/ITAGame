@@ -68,7 +68,7 @@ def draw_levelx(number):
       #_
       draw_capped_stripx(2,6,28,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",title_screen)
       #end zone
-      print (title_screen)
+      #print (title_screen)
       generate_collision_list()
     if number == 1:
       #ground
@@ -86,75 +86,76 @@ def draw_levelx(number):
       level_one.append(strawberry)
       generate_collision_list()
     if number == 2:
-      #ground
-
-      draw_capped_stripx(0,14,32,"Copper_Bar_Left.png","Copper_Bar_Horizontal.png","Copper_Bar_Right.png",level_two)
-      draw_capped_stripx(0,15,32,"Copper_Bar_Left.png","Copper_Bar_Horizontal.png","Copper_Bar_Right.png",level_two)
-      #first platform
-      draw_capped_stripx(5,11,3,"Metal_Bar_Left.png","Metal_Bar_Horizontal.png","Metal_Bar_Right.png",level_two)
-      draw_capped_stripx(7,10,1,"Metal_Bar_Vertical.png","Metal_Bar_Vertical.png","Metal_Bar_Vertical.png",level_two)
-      draw_capped_stripx(7,9,2,"Metal_Bar_Left.png","Metal_Bar_Right.png","Metal_Bar_Right.png",level_two)
-      #second platform
-      draw_capped_stripx(13,7,3,"Bronze_Bar_Left.png","Bronze_Bar_Horizontal.png","Bronze_Bar_Right.png",level_two)
-      draw_capped_stripx(15,6,1,"Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png",level_two)
-      draw_capped_stripx(15,5,1,"Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png",level_two)
-      draw_capped_stripx(15,4,1,"Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png",level_two)
-      draw_capped_stripx(15,3,1,"Bronze_Bar_Top.png","Bronze_Bar_Top.png","Bronze_Bar_Top.png",level_two)
-      #third platform
-      draw_capped_stripx(4,4,1,"Gold_Solid.png","Gold_Solid.png","Gold_Solid.png",level_two)
-      #fourth platform
-      draw_capped_stripx(26,4,1,"Gold_Bar_Top.png","Gold_Bar_Top.png","Gold_Bar_Top.png",level_two)
-      draw_capped_stripx(26,5,1,"Gold_Semi_Solid_Vertical.png","Gold_Semi_Solid_Vertical.png","Gold_Semi_Solid_Vertical.png",level_two)
-      draw_capped_stripx(26,6,1,"Gold_Bar_Bottom.png","Gold_Bar_Bottom.png","Gold_Bar_Bottom.png",level_two)
-      draw_capped_stripx(24,3,1,"Bronze_Bar_Top.png","Bronze_Bar_Top.png","Bronze_Bar_Top.png",level_two)
-      draw_capped_stripx(24,4,1,"Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png",level_two)
-      draw_capped_stripx(24,5,1,"Bronze_Bar_Bottom.png","Bronze_Bar_Bottom.png","Bronze_Bar_Bottom.png",level_two)
-      draw_capped_stripx(22,2,1,"Metal_Bar_Top.png","Metal_Bar_Top.png","Metal_Bar_Top.png",level_two)
-      draw_capped_stripx(22,3,1,"Metal_Bar_Vertical.png","Metal_Bar_Vertical.png","Metal_Bar_Vertical.png",level_two)
-      draw_capped_stripx(22,4,1,"Metal_Bar_Bottom.png","Metal_Bar_Bottom.png","Metal_Bar_Bottom.png",level_two)
-      draw_capped_stripx(20,1,1,"Copper_Bar_Top.png","Copper_Bar_Top.png","Copper_Bar_Top.png",level_two)
-      draw_capped_stripx(20,2,1,"Copper_Bar_Vertical.png","Copper_Bar_Vertical.png","Copper_Bar_Vertical.png",level_two)
-      draw_capped_stripx(20,3,1,"Copper_Bar_Bottom.png","Copper_Bar_Bottom.png","Copper_Bar_Bottom.png",level_two)
-      #final platform
-      draw_capped_stripx(29,13,1,"Copper_Bar_Bottom.png","Copper_Bar_Bottom.png","Copper_Bar_Bottom.png",level_two)
-      draw_capped_stripx(29,12,1,"Copper_Bar_Vertical.png","Copper_Bar_Vertical.png","Copper_Bar_Vertical.png",level_two)
-      draw_capped_stripx(29,11,1,"Copper_Bar_Vertical.png","Copper_Bar_Vertical.png","Copper_Bar_Vertical.png",level_two)
-      draw_capped_stripx(29,10,1,"Copper_Bar_Vertical.png","Copper_Bar_Vertical.png","Copper_Bar_Vertical.png",level_two)
-      draw_capped_stripx(29,9,1,"Copper_Bar_Top.png","Copper_Bar_Top.png","Copper_Bar_Top.png",level_two)
-      #end zoned
-      
-      
-       if number == 3:
       #top layer of grass: y = 14 
-      draw_capped_stripx(0,14,32,"Stone_Corner_Top_Left.png","Stone_Slab_Top.png","Stone_Corner_Top, Right.png",level_three)
-      draw_capped_stripx(0,15,32,"Stone_Slab_Left.png","Void.png","Stone_Slab_Right.png",level_three)
-      draw_capped_stripx(8,11,3,"Leaf_Corner_Top_Left.png","Leaf_Slab_Top.png","Leaf_Corner_Top_Right.png",level_three)
-      draw_capped_stripx(12,9,3,"Leaf_Corner_Top_Left.png","Leaf_Slab_Top.png","Leaf_Corner_Top_Right.png",level_three)
-      draw_capped_stripx(16,7,3,"Leaf_Corner_Top_Left.png","Leaf_Slab_Top.png","Leaf_Corner_Top_Right.png",level_three)
-      draw_capped_stripx(20,5,3,"Leaf_Corner_Top_Left.png","Leaf_Slab_Top.png","Leaf_Corner_Top_Right.png",level_three)
-      level_three.append(Environment_Sprite("Leaf_Slab_Left.png", 23, 11, True))
-      level_three.append(Environment_Sprite("Leaf_Slab_Left.png", 23, 12, True))
-      level_three.append(Environment_Sprite("Leaf_Slab_Left.png", 23, 11, True))
-      level_three.append(Environment_Sprite("Leaf_Slab_Left.png", 23, 10, True))
-      level_three.append(Environment_Sprite("Leaf_Corner_Top_Left.png", 23, 9, True))
+      draw_capped_stripx(0,14,32,"Stone_Corner_Top_Left.png","Stone_Slab_Top.png","Stone_Corner_Top, Right.png",level_two)
+      draw_capped_stripx(0,15,32,"Stone_Slab_Left.png","Void.png","Stone_Slab_Right.png",level_two)
+      draw_capped_stripx(8,11,3,"Leaf_Corner_Top_Left.png","Leaf_Slab_Top.png","Leaf_Corner_Top_Right.png",level_two)
+      draw_capped_stripx(12,9,3,"Leaf_Corner_Top_Left.png","Leaf_Slab_Top.png","Leaf_Corner_Top_Right.png",level_two)
+      draw_capped_stripx(16,7,3,"Leaf_Corner_Top_Left.png","Leaf_Slab_Top.png","Leaf_Corner_Top_Right.png",level_two)
+      draw_capped_stripx(20,5,3,"Leaf_Corner_Top_Left.png","Leaf_Slab_Top.png","Leaf_Corner_Top_Right.png",level_two)
+      level_two.append(Environment_Sprite("Leaf_Slab_Left.png", 23, 13, True))
+      level_two.append(Environment_Sprite("Leaf_Slab_Left.png", 23, 12, True))
+      level_two.append(Environment_Sprite("Leaf_Slab_Left.png", 23, 11, True))
+      level_two.append(Environment_Sprite("Leaf_Slab_Left.png", 23, 10, True))
+      level_two.append(Environment_Sprite("Leaf_Corner_Top_Left.png", 23, 9, True))
+      level_two.append(strawberry)
+      print(level_two)
+      generate_collision_list()
+      
+    if number == 3:
+      #ground
+      draw_capped_stripx(0,14,32, "Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_three)
+      draw_capped_stripx(0,15,32, "Grass_Orange_Center_Left.png","Grass_Orange_Center_Center.png","Grass_Orange_Center_Right.png", level_three)
+      #platforms
+      draw_capped_stripx(2,12,3,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_three)
+      draw_capped_stripx(9,9,3,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_three)
+      draw_capped_stripx(14,6,3,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_three)
+      draw_capped_stripx(14,2,1,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_three)
+      draw_capped_stripx(20,3,2,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_three)
+      draw_capped_stripx(25,3,3,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_three)
+      draw_capped_stripx(5,2,1,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_three)
+      #strawberry
+      level_three.append(strawberry)
+      generate_collision_list()
 
       
       
     if number == 4:
-      #ground
-      draw_capped_stripx(0,14,32, "Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_four)
-      draw_capped_stripx(0,15,32, "Grass_Orange_Center_Left.png","Grass_Orange_Center_Center.png","Grass_Orange_Center_Right.png", level_four)
-      #platforms
-      draw_capped_stripx(2,12,3,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_four)
-      draw_capped_stripx(9,9,3,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_four)
-      draw_capped_stripx(14,6,3,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_four)
-      draw_capped_stripx(14,2,1,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_four)
-      draw_capped_stripx(20,3,2,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_four)
-      draw_capped_stripx(25,3,3,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_four)
-      draw_capped_stripx(5,2,1,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_four)
-      #strawberry
+#ground
+
+      draw_capped_stripx(0,14,32,"Copper_Bar_Left.png","Copper_Bar_Horizontal.png","Copper_Bar_Right.png",level_four)
+      draw_capped_stripx(0,15,32,"Copper_Bar_Left.png","Copper_Bar_Horizontal.png","Copper_Bar_Right.png",level_four)
+      #first platform
+      draw_capped_stripx(5,11,3,"Metal_Bar_Left.png","Metal_Bar_Horizontal.png","Metal_Bar_Right.png",level_four)
+      draw_capped_stripx(7,10,1,"Metal_Bar_Vertical.png","Metal_Bar_Vertical.png","Metal_Bar_Vertical.png",level_four)
+      draw_capped_stripx(7,9,2,"Metal_Bar_Left.png","Metal_Bar_Right.png","Metal_Bar_Right.png",level_four)
+      #second platform
+      draw_capped_stripx(13,7,3,"Bronze_Bar_Left.png","Bronze_Bar_Horizontal.png","Bronze_Bar_Right.png",level_four)
+      draw_capped_stripx(15,6,1,"Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png",level_four)
+      draw_capped_stripx(15,5,1,"Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png",level_four)
+      draw_capped_stripx(15,4,1,"Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png",level_four)
+      draw_capped_stripx(15,3,1,"Bronze_Bar_Top.png","Bronze_Bar_Top.png","Bronze_Bar_Top.png",level_four)
+      #third platform
+      draw_capped_stripx(4,4,1,"Gold_Solid.png","Gold_Solid.png","Gold_Solid.png",level_four)
+      #fourth platform
+      draw_capped_stripx(26,4,1,"Gold_Bar_Top.png","Gold_Bar_Top.png","Gold_Bar_Top.png",level_four)
+      draw_capped_stripx(26,5,1,"Gold_Semi_Solid_Vertical.png","Gold_Semi_Solid_Vertical.png","Gold_Semi_Solid_Vertical.png",level_four)
+      draw_capped_stripx(26,6,1,"Gold_Bar_Bottom.png","Gold_Bar_Bottom.png","Gold_Bar_Bottom.png",level_four)
+      draw_capped_stripx(24,3,1,"Bronze_Bar_Top.png","Bronze_Bar_Top.png","Bronze_Bar_Top.png",level_four)
+      draw_capped_stripx(24,4,1,"Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png",level_four)
+      draw_capped_stripx(24,5,1,"Bronze_Bar_Bottom.png","Bronze_Bar_Bottom.png","Bronze_Bar_Bottom.png",level_four)
+      draw_capped_stripx(22,2,1,"Metal_Bar_Top.png","Metal_Bar_Top.png","Metal_Bar_Top.png",level_four)
+      draw_capped_stripx(22,3,1,"Metal_Bar_Vertical.png","Metal_Bar_Vertical.png","Metal_Bar_Vertical.png",level_four)
+      draw_capped_stripx(22,4,1,"Metal_Bar_Bottom.png","Metal_Bar_Bottom.png","Metal_Bar_Bottom.png",level_four)
+      draw_capped_stripx(20,1,1,"Copper_Bar_Top.png","Copper_Bar_Top.png","Copper_Bar_Top.png",level_four)
+      draw_capped_stripx(20,2,1,"Copper_Bar_Vertical.png","Copper_Bar_Vertical.png","Copper_Bar_Vertical.png",level_four)
+      draw_capped_stripx(20,3,1,"Copper_Bar_Bottom.png","Copper_Bar_Bottom.png","Copper_Bar_Bottom.png",level_four)
+      #final platform
+      draw_capped_stripx(29,13,1,"Copper_Bar_Bottom.png","Copper_Bar_Bottom.png","Copper_Bar_Bottom.png",level_four)
+      draw_capped_stripx(29,12,1,"Copper_Bar_Vertical.png","Copper_Bar_Vertical.png","Copper_Bar_Vertical.png",level_four)
+      draw_capped_stripx(29,11,1,"Copper_Bar_Vertical.png","Copper_Bar_Vertical.png","Copper_Bar_Vertical.png",level_four)
+      draw_capped_stripx(29,10,1,"Copper_Bar_Vertical.png","Copper_Bar_Vertical.png","Copper_Bar_Vertical.png",level_four)
+      draw_capped_stripx(29,9,1,"Copper_Bar_Top.png","Copper_Bar_Top.png","Copper_Bar_Top.png",level_four)
+      #end zoned
       level_four.append(strawberry)
       generate_collision_list()
-
-
-  

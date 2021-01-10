@@ -78,63 +78,86 @@ not_level1_over = False
 
 # block1 = Sprite("Images/Sprites/platform.png", setuMedia.p.SCREEN_HEIGHT/2, setuMedia.p.SCREEN_WIDTH/1.5, True)
 # level_one_platforms = [block1]
-
+#instances
 title_screen_class = level.Level(level_sprites.title_screen)
 level1 = level.Level(level_sprites.level_one)
-
 level2 = level.Level(level_sprites.level_two)
-
+level3 = level.Level(level_sprites.level_three)
 level4 = level.Level(level_sprites.level_four)
 
 
 
-#i think this is right but it might need to be Level2
+#Creating setup lists for game loop
 level_sprites.draw_levelx(setup.level)
-
 generate_collision_list()
 old_level = setup.level
+
+#Main game loop
 while not game_over:
     level_sprites.strawberry.fruit_game_loop(Player)
+    #Cnditional to draw new background when level changes
     if setup.level != old_level:
         level_sprites.draw_levelx(setup.level)
         collision_list.clear()
         if setup.level == 0:
+            
             level_list = level_sprites.title_screen
         elif setup.level == 1:
+     
             level_list = level_sprites.level_one
             # multiply by 60
             level_sprites.strawberry.x = 17 * 60
         elif setup.level == 2:
+           
             level_list = level_sprites.level_two
-            level_sprites.strawberry.x = (30.5 * 40) + 20
-            level_sprites.strawberry.y = (13 * 40) + 20
+    
         elif setup.level == 3:
+  
             level_list = level_sprites.level_three
         elif setup.level == 4:
+   
             level_list = level_sprites.level_four
-    
-        level_list = level_sprites.level_four
-            level_sprites.strawberry.x = 30 * 60
-            level_sprites.strawberry.y = 20 * 60
+        level_sprites.strawberry.fruit_game_loop(Player)
         generate_collision_list(level_list)
         old_level = setup.level
     if setup.level == 0:
         title_screen_class.game_loop()
     elif setup.level == 1:
+        level_sprites.strawberry.fruit_game_loop(Player)
+        level_sprites.strawberry.x = (18 * 40) + 20
+        level_sprites.strawberry.y = (1 * 40) + 20
         level1.game_loop()
         for base_image in level_sprites.title_screen:
             base_image.is_visible = False
             base_image.has_collision = False
-
-           
-
     elif setup.level == 2:
+        #level_sprites.strawberry.fruit_game_loop(Player)
+        level_sprites.strawberry.x = (25 * 40) + 20
+        level_sprites.strawberry.y = (11 * 40) + 20
         level2.game_loop()
-
-    elif setup.level == 4: 
+        level_sprites.strawberry.fruit_game_loop(Player)
+        for base_image in level_sprites.level_one:
+            if base_image != level_sprites.strawberry:
+                base_image.is_visible = False
+                base_image.has_collision = False
+    elif setup.level == 3:
+        level_sprites.strawberry.fruit_game_loop(Player)
         level_sprites.strawberry.x = (5 * 40) + 20
         level_sprites.strawberry.y = (1 * 40) + 20
+        level3.game_loop()
+        for base_image in level_sprites.level_two:
+            if base_image != level_sprites.strawberry:
+                base_image.is_visible = False
+                base_image.has_collision = False
+    elif setup.level == 4: 
+        level_sprites.strawberry.fruit_game_loop(Player)
+        level_sprites.strawberry.x = (30.5 * 40) + 20
+        level_sprites.strawberry.y = (13 * 40) + 20
         level4.game_loop()
+        for base_image in level_sprites.level_four:
+            if base_image != level_sprites.strawberry:
+                base_image.is_visible = False
+                base_image.has_collision = False
 
     Media.p.move_player()
     Media.p.draw()
