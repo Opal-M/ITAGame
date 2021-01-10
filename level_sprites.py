@@ -7,7 +7,8 @@ strawberry = Object_Sprite("Fruit_Strawberry/tile004.png", 25, 10)
 title_screen = []
 level_one = []
 level_two = []
-
+level_three = []
+level_four = []
 # for number in range(0, 32):
 #     level_one.append(Environment_Sprite("Grass_Green_Center_Center.png",number , 13 , True))
 # for number in range(0, 32):
@@ -19,7 +20,7 @@ level_two = []
   #for number in range(0,length):
       #blist.append(Environment_Sprite(image, x+number, y, True))
 def draw_capped_stripx(x,y,length,start,middle,end,blist):
-  global title_screen, level_one, level_two
+  global title_screen, level_one, level_two, level_four
   blist.append(Environment_Sprite(start, x, y, True))
   for number in range(1,length):
     blist.append(Environment_Sprite(middle, x+number, y, True))
@@ -86,6 +87,7 @@ def draw_levelx(number):
       generate_collision_list()
     if number == 2:
       #ground
+
       draw_capped_stripx(0,14,32,"Copper_Bar_Left.png","Copper_Bar_Horizontal.png","Copper_Bar_Right.png",level_two)
       draw_capped_stripx(0,15,32,"Copper_Bar_Left.png","Copper_Bar_Horizontal.png","Copper_Bar_Right.png",level_two)
       #first platform
@@ -120,3 +122,20 @@ def draw_levelx(number):
       draw_capped_stripx(29,10,1,"Copper_Bar_Vertical.png","Copper_Bar_Vertical.png","Copper_Bar_Vertical.png",level_two)
       draw_capped_stripx(29,9,1,"Copper_Bar_Top.png","Copper_Bar_Top.png","Copper_Bar_Top.png",level_two)
       #end zoned
+    if number == 4:
+      #ground
+      draw_capped_stripx(0,14,32, "Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_four)
+      draw_capped_stripx(0,15,32, "Grass_Orange_Center_Left.png","Grass_Orange_Center_Center.png","Grass_Orange_Center_Right.png", level_four)
+      #platforms
+      draw_capped_stripx(2,12,3,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_four)
+      draw_capped_stripx(9,9,3,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_four)
+      draw_capped_stripx(14,6,3,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_four)
+      draw_capped_stripx(14,2,1,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_four)
+      draw_capped_stripx(20,3,2,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_four)
+      draw_capped_stripx(25,3,3,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_four)
+      draw_capped_stripx(5,2,1,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_four)
+      #strawberry
+      level_four.append(strawberry)
+      generate_collision_list()
+
+

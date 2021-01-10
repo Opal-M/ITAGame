@@ -49,3 +49,8 @@ class Level1:
 class Level2:
   def __init__(self,variable):
     self.self = self
+
+class Level4:
+  def __init__(self,variable):
+    self.self = self
+
