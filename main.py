@@ -83,6 +83,7 @@ title_screen_class = level.Level(level_sprites.title_screen)
 level1 = level.Level(level_sprites.level_one)
 
 level2 = level.Level(level_sprites.level_two)
+
 #i think this is right but it might need to be Level2
 level_sprites.draw_levelx(setup.level)
 
@@ -98,9 +99,11 @@ while not game_over:
         elif setup.level == 1:
             level_list = level_sprites.level_one
             # multiply by 60
-            level_sprites.strawberry.x = 5 * 60
+            level_sprites.strawberry.x = 17 * 60
         elif setup.level == 2:
             level_list = level_sprites.level_two
+            level_sprites.strawberry.x = (30.5 * 40) + 20
+            level_sprites.strawberry.y = (13 * 40) + 20
         elif setup.level == 3:
             level_list = level_sprites.level_three
         generate_collision_list(level_list)
