@@ -79,24 +79,27 @@ not_level1_over = False
 # block1 = Sprite("Images/Sprites/platform.png", setuMedia.p.SCREEN_HEIGHT/2, setuMedia.p.SCREEN_WIDTH/1.5, True)
 # level_one_platforms = [block1]
 
+title_screen = level.Level(level_sprites.title_screen)
 level1 = level.Level(level_sprites.level_one)
-level2 = level.Level2(level_sprites.level_two)
-level_sprites.draw_level(1)
+
+level2 = level.Level(level_sprites.level_two)
+#i think this is right but it might need to be Level2
+level_sprites.draw_levelx(setup.level)
+
 generate_collision_list()
 while not game_over:
     level_sprites.strawberry.fruit_game_loop(Player)
     old_level = setup.level
     if setup.level != old_level:
-        level_sprites.draw_level(setup.level)
+        level_sprites.draw_levelx(setup.level)
         generate_collision_list()
-        old_level = setup.level + 1
-    if setup.level == 1:
+        old_level = setup.level
+    if setup.level == 0:
+        title_screen.game_loop()
+    elif setup.level == 1:
         level1.game_loop()
     elif setup.level == 2:
         level2.game_loop()
-
-  # level2()
-  # draw_images()
     Media.p.move_player()
     Media.p.draw()
     # move_ruby()
