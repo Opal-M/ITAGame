@@ -77,8 +77,9 @@ not_level1_over = False
 # block1 = Sprite("Images/Sprites/platform.png", setup.SCREEN_HEIGHT/2, setup.SCREEN_WIDTH/1.5, True)
 # level_one_platforms = [block1]
 
+title_screen = level.Level(level_sprites.title_screen)
 level1 = level.Level(level_sprites.level_one)
-level_sprites.draw_level(1)
+level_sprites.draw_level0(0)
 generate_collision_list()
 while not game_over:
     old_level = setup.level
@@ -86,6 +87,8 @@ while not game_over:
         level_sprites.draw_level(setup.level)
         generate_collision_list()
         old_level = setup.level
+    if setup.level == 0:
+        title_screen.game_loop()
     if setup.level == 1:
         level1.game_loop()
         

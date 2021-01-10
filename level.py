@@ -30,7 +30,7 @@ class Level:
 
 
   def game_loop(self):
-    if setup.level == 1:
+    if setup.level == 0:
       self.draw_background()
       self.logic()
 
