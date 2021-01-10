@@ -20,7 +20,7 @@ level_four = []
   #for number in range(0,length):
       #blist.append(Environment_Sprite(image, x+number, y, True))
 def draw_capped_stripx(x,y,length,start,middle,end,blist):
-  global title_screen, level_one, level_two, level_four
+  global title_screen, level_one, level_two,level_three,level_four
   blist.append(Environment_Sprite(start, x, y, True))
   for number in range(1,length):
     blist.append(Environment_Sprite(middle, x+number, y, True))
@@ -122,6 +122,24 @@ def draw_levelx(number):
       draw_capped_stripx(29,10,1,"Copper_Bar_Vertical.png","Copper_Bar_Vertical.png","Copper_Bar_Vertical.png",level_two)
       draw_capped_stripx(29,9,1,"Copper_Bar_Top.png","Copper_Bar_Top.png","Copper_Bar_Top.png",level_two)
       #end zoned
+      
+      
+       if number == 3:
+      #top layer of grass: y = 14 
+      draw_capped_stripx(0,14,32,"Stone_Corner_Top_Left.png","Stone_Slab_Top.png","Stone_Corner_Top, Right.png",level_three)
+      draw_capped_stripx(0,15,32,"Stone_Slab_Left.png","Void.png","Stone_Slab_Right.png",level_three)
+      draw_capped_stripx(8,11,3,"Leaf_Corner_Top_Left.png","Leaf_Slab_Top.png","Leaf_Corner_Top_Right.png",level_three)
+      draw_capped_stripx(12,9,3,"Leaf_Corner_Top_Left.png","Leaf_Slab_Top.png","Leaf_Corner_Top_Right.png",level_three)
+      draw_capped_stripx(16,7,3,"Leaf_Corner_Top_Left.png","Leaf_Slab_Top.png","Leaf_Corner_Top_Right.png",level_three)
+      draw_capped_stripx(20,5,3,"Leaf_Corner_Top_Left.png","Leaf_Slab_Top.png","Leaf_Corner_Top_Right.png",level_three)
+      level_three.append(Environment_Sprite("Leaf_Slab_Left.png", 23, 11, True))
+      level_three.append(Environment_Sprite("Leaf_Slab_Left.png", 23, 12, True))
+      level_three.append(Environment_Sprite("Leaf_Slab_Left.png", 23, 11, True))
+      level_three.append(Environment_Sprite("Leaf_Slab_Left.png", 23, 10, True))
+      level_three.append(Environment_Sprite("Leaf_Corner_Top_Left.png", 23, 9, True))
+
+      
+      
     if number == 4:
       #ground
       draw_capped_stripx(0,14,32, "Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_four)
@@ -139,3 +157,4 @@ def draw_levelx(number):
       generate_collision_list()
 
 
+  
