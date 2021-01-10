@@ -30,9 +30,16 @@ class Level:
 
 
   def game_loop(self):
-    if setup.level == 0:
-      self.draw_background()
-      self.logic()
+    old_level = setup.level
+    if setup.level != old_level:
+        level_sprites.draw_levelx(setup.level)
+        print("Trench")
+        p.x_pos = 1
+        p.y_pos = -1
+        generate_collision_list()
+        old_level = setup.level
+    self.draw_background()
+    self.logic()
 
     
 class Level1:

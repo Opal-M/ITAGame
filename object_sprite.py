@@ -77,12 +77,12 @@ class Object_Sprite(pygame.sprite.Sprite):
 
     #code to check if player has picked up fruit    
     def fruit_collide(self, player):
-        print ("hello")
         if self.is_touching(p):
-            pass
             # print("change level")
-            # setup.level += 1
-            # self.hide
+            setup.level += 1
+            p.x = 0
+            p.y = 0
+            self.hide
             # collision_list.remove(self)
     def fruit_game_loop(self,player):
         self.fruit_collide(player)

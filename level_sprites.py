@@ -2,8 +2,9 @@ import pygame
 from environment_sprite import Environment_Sprite
 from object_sprite import Object_Sprite
 import Media
+from environment_sprite import sprite_list
 
-strawberry = Object_Sprite("Fruit_Strawberry/tile004.png", 18, 1, True)
+strawberry = Object_Sprite("Fruit_Strawberry/tile004.png", 18, 1)
 title_screen = []
 level_one = []
 level_two = []
