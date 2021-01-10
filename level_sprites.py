@@ -6,6 +6,7 @@ level_one = [
 # Sprite("Grass_Top_1.png", 0, 0, True),
 # Sprite("Grass_Top_1.png", 0, 1, True)
 ]
+level_two= []
 # for number in range(0, 32):
 #     level_one.append(Environment_Sprite("Grass_Green_Center_Center.png",number , 13 , True))
 # for number in range(0, 32):
@@ -35,5 +36,7 @@ def draw_level(number):
         #4th
         draw_capped_strip(15,2,5,"Brick_Center_Left.png","Brick_Center_Center.png","Brick_Center_Right.png")
         #end zone
-        level_one.append(Object_Sprite("Fruit_Strawberry/tile004.png", 18, 1, False))
+        level_one.append(Object_Sprite("Fruit_Strawberry/tile004.png", 18, 1, True))
+    elif number == 2:
+        pass    
 

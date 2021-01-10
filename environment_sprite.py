@@ -3,7 +3,7 @@ import pygame
 import os
 import time
 import statistics
-import setup
+from setup import SCREEN_HEIGHT, SCREEN_HEIGHT
 import math
 
 # Brings the collision_list from main.py to sprite.py

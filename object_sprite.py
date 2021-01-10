@@ -3,9 +3,9 @@ import pygame
 import os
 import time
 import statistics
-import setup
+from setup import p
 import math
-from environment_sprite import sprite_list
+from environment_sprite import sprite_list, collision_list, Player
 class Object_Sprite(pygame.sprite.Sprite):
     def __init__(self, image, x=0, y=0, collision=False):
         pygame.sprite.Sprite.__init__(self)
@@ -61,3 +61,14 @@ class Object_Sprite(pygame.sprite.Sprite):
 
     def show(self):
         self.is_visible = True
+
+    #code to check if player has picked up fruit    
+    def fruit_collide (self, player):
+        print ("hello")
+        if p.will_collide_sprite(self):
+            print("hello")
+            setup.level = setup.level +1
+            self.hide 
+            collision_list.remove(self)
+    def fruit_game_loop (self,player):
+        self.fruit_collide(player)
