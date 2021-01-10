@@ -20,13 +20,13 @@ level_four = []
   #for number in range(0,length):
       #blist.append(Environment_Sprite(image, x+number, y, True))
 def draw_capped_stripx(x,y,length,start,middle,end,blist):
-  global title_screen, level_one, level_two, level_four
+  global title_screen, level_one, level_two,level_three,level_four
   blist.append(Environment_Sprite(start, x, y, True))
   for number in range(1,length):
     blist.append(Environment_Sprite(middle, x+number, y, True))
   blist.append(Environment_Sprite(end, x+(length-1), y, True))
 def draw_levelx(number):
-    if number == 0:
+    if number == 3:
       draw_capped_stripx(0,13,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png",title_screen)
       draw_capped_stripx(0,12,32,"Grass_Green_Top_Left.png","Grass_Green_Top_Center.png","Grass_Green_Top_Right.png",title_screen)
       draw_capped_stripx(0,14,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png",title_screen)
@@ -112,3 +112,16 @@ def draw_levelx(number):
       generate_collision_list()
 
 
+    if number == 0:
+      #top layer of grass: y = 14 
+      draw_capped_stripx(0,14,32,"Stone_Corner_Top_Left.png","Stone_Slab_Top.png","Stone_Corner_Top, Right.png",level_three)
+      draw_capped_stripx(0,15,32,"Stone_Slab_Left.png","Void.png","Stone_Slab_Right.png",level_three)
+      draw_capped_stripx(8,11,3,"Leaf_Corner_Top_Left.png","Leaf_Slab_Top.png","Leaf_Corner_Top_Right.png",level_three)
+      draw_capped_stripx(12,9,3,"Leaf_Corner_Top_Left.png","Leaf_Slab_Top.png","Leaf_Corner_Top_Right.png",level_three)
+      draw_capped_stripx(16,7,3,"Leaf_Corner_Top_Left.png","Leaf_Slab_Top.png","Leaf_Corner_Top_Right.png",level_three)
+      draw_capped_stripx(20,5,3,"Leaf_Corner_Top_Left.png","Leaf_Slab_Top.png","Leaf_Corner_Top_Right.png",level_three)
+      level_three.append(Environment_Sprite("Leaf_Slab_Left.png", 23, 11, True))
+      level_three.append(Environment_Sprite("Leaf_Slab_Left.png", 23, 12, True))
+      level_three.append(Environment_Sprite("Leaf_Slab_Left.png", 23, 11, True))
+      level_three.append(Environment_Sprite("Leaf_Slab_Left.png", 23, 10, True))
+      level_three.append(Environment_Sprite("Leaf_Corner_Top_Left.png", 23, 9, True))
