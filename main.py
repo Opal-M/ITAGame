@@ -79,6 +79,7 @@ not_level1_over = False
 
 title_screen = level.Level(level_sprites.title_screen)
 level1 = level.Level(level_sprites.level_one)
+level2 = level.Level(level_sprites.level2)
 level_sprites.draw_level0(0)
 generate_collision_list()
 while not game_over:
@@ -87,10 +88,13 @@ while not game_over:
         level_sprites.draw_level(setup.level)
         generate_collision_list()
         old_level = setup.level
+    setup.level = 2
     if setup.level == 0:
         title_screen.game_loop()
     if setup.level == 1:
         level1.game_loop()
+    if setup.level == 2:
+        level2.game_loop()
         
   # level2()
   # draw_images()
