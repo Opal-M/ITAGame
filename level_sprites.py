@@ -3,12 +3,17 @@ from environment_sprite import Environment_Sprite, generate_collision_list,sprit
 from object_sprite import Object_Sprite
 import Media
 
-strawberry = Object_Sprite("Fruit_Strawberry/tile004.png", 25, 10)
+strawberry = Object_Sprite("Fruit_Strawberry/tile004.png", 27, 10)
 title_screen = []
 level_one = []
 level_two = []
+
+end_screen = []
+
+
 level_three = []
 level_four = []
+
 # for number in range(0, 32):
 #     level_one.append(Environment_Sprite("Grass_Green_Center_Center.png",number , 13 , True))
 # for number in range(0, 32):
@@ -27,9 +32,13 @@ def draw_capped_stripx(x,y,length,start,middle,end,blist):
   blist.append(Environment_Sprite(end, x+(length-1), y, True))
 def draw_levelx(number):
     if number == 0:
+
       #ground
       draw_capped_stripx(0,14,32,"Grass_Green_Top_Left.png","Grass_Green_Top_Center.png","Grass_Green_Top_Right.png",title_screen)
       draw_capped_stripx(0,15,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png",title_screen)
+      draw_capped_stripx(0,14,32,"Grass_Green_Top_Left.png","Grass_Green_Top_Center.png","Grass_Green_Top_Right.png",title_screen)
+      draw_capped_stripx(0,16,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png",title_screen)
+      draw_capped_stripx(0,17,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png",title_screen)
       #T
       draw_capped_stripx(2,2,3,"Bronze_Bar_Left.png","Bronze_Bar_Horizontal.png","Bronze_Bar_Right.png",title_screen)
       draw_capped_stripx(3,3,1,"Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png","Bronze_Bar_Veritical.png",title_screen)
@@ -67,13 +76,21 @@ def draw_levelx(number):
       draw_capped_stripx(29,4,1,"Wood_Cube_Bottom_Left.png","Wood_Cube_Bottom_Left.png","Wood_Cube_Bottom_Left.png",title_screen)
       #_
       draw_capped_stripx(2,6,28,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",title_screen)
+      title_screen.append(Environment_Sprite("Gold_Solid.png", 15, 13, True))
+      title_screen.append(Environment_Sprite("WASD_To_Move.png", 4, 8.7, False, False))
+      title_screen.append(Environment_Sprite("SPACE_To_Jump.png", 15, 8.7, False, False))
+      title_screen.append(Environment_Sprite("TOUCH_Strawberry.png", 27, 8, False, False))
       #end zone
       #print (title_screen)
       generate_collision_list()
     if number == 1:
       #ground
       draw_capped_stripx(0,14,32,"Grass_Green_Top_Left.png","Grass_Green_Top_Center.png","Grass_Green_Top_Right.png",level_one)
+
       draw_capped_stripx(0,15,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png",level_one)
+      draw_capped_stripx(0,14,32,"Grass_Green_Top_Left.png","Grass_Green_Top_Center.png","Grass_Green_Top_Right.png",level_one)
+      draw_capped_stripx(0,16,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png",level_one)
+      draw_capped_stripx(0,17,32,"Grass_Green_Center_Left.png","Grass_Green_Center_Center.png","Grass_Green_Center_Right.png",level_one)
       #first platform
       draw_capped_stripx(10,11,5,"Brick_Center_Left.png","Brick_Center_Center.png","Brick_Center_Right.png",level_one)
       #2nd
@@ -104,6 +121,7 @@ def draw_levelx(number):
       
     if number == 3:
       #ground
+ 
       draw_capped_stripx(0,14,32, "Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_three)
       draw_capped_stripx(0,15,32, "Grass_Orange_Center_Left.png","Grass_Orange_Center_Center.png","Grass_Orange_Center_Right.png", level_three)
       #platforms
@@ -159,3 +177,14 @@ def draw_levelx(number):
       #end zoned
       level_four.append(strawberry)
       generate_collision_list()
+      
+     if number == 5:
+      draw_capped_stripx(0, 13, 32, "Grass_Green_Center_Left.png", "Grass_Green_Center_Center.png",
+                         "Grass_Green_Center_Right.png", end_screen)
+      draw_capped_stripx(0, 12, 32, "Grass_Green_Top_Left.png", "Grass_Green_Top_Center.png",
+                         "Grass_Green_Top_Right.png", end_screen)
+      draw_capped_stripx(0, 14, 32, "Grass_Green_Center_Left.png", "Grass_Green_Center_Center.png",
+                         "Grass_Green_Center_Right.png", end_screen)
+      draw_capped_stripx(0, 15, 32, "Grass_Green_Center_Left.png", "Grass_Green_Center_Center.png",
+                         "Grass_Green_Center_Right.png", end_screen)
+

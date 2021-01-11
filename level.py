@@ -36,8 +36,11 @@ class Level:
         level_sprites.strawberry.fruit_game_loop(Player)
         level_sprites.draw_levelx(setup.level)
         print("Trench")
+
+=======
         #p.x_pos = 1
         #p.y_pos = -1
+
         generate_collision_list()
         old_level = setup.level
     self.draw_background()
