@@ -178,13 +178,19 @@ def draw_levelx(number):
       level_four.append(strawberry)
       generate_collision_list()
       
-     if number == 5:
-      draw_capped_stripx(0, 13, 32, "Grass_Green_Center_Left.png", "Grass_Green_Center_Center.png",
-                         "Grass_Green_Center_Right.png", end_screen)
-      draw_capped_stripx(0, 12, 32, "Grass_Green_Top_Left.png", "Grass_Green_Top_Center.png",
-                         "Grass_Green_Top_Right.png", end_screen)
-      draw_capped_stripx(0, 14, 32, "Grass_Green_Center_Left.png", "Grass_Green_Center_Center.png",
-                         "Grass_Green_Center_Right.png", end_screen)
-      draw_capped_stripx(0, 15, 32, "Grass_Green_Center_Left.png", "Grass_Green_Center_Center.png",
-                         "Grass_Green_Center_Right.png", end_screen)
+    if number == 5:
+        Media.p.x = 640
+        Media.p.y = -100
+        draw_capped_stripx(0, 14, 32, "Grass_Green_Top_Left.png", "Grass_Green_Top_Center.png",
+                           "Grass_Green_Top_Right.png", end_screen)
+        draw_capped_stripx(0, 15, 32, "Grass_Green_Center_Left.png", "Grass_Green_Center_Center.png",
+                           "Grass_Green_Center_Right.png", end_screen)
+        draw_capped_stripx(0, 14, 32, "Grass_Green_Top_Left.png", "Grass_Green_Top_Center.png",
+                           "Grass_Green_Top_Right.png", end_screen)
+        draw_capped_stripx(0, 16, 32, "Grass_Green_Center_Left.png", "Grass_Green_Center_Center.png",
+                           "Grass_Green_Center_Right.png", end_screen)
+        draw_capped_stripx(0, 17, 32, "Grass_Green_Center_Left.png", "Grass_Green_Center_Center.png",
+                           "Grass_Green_Center_Right.png", end_screen)
+        end_screen.append(Environment_Sprite("You_Won.png", 15.5, 7, False, False))
+        generate_collision_list()
 

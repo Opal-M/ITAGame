@@ -53,22 +53,22 @@ class Player(pygame.sprite.Sprite):
         self.animation_time = time.time()
         self.direction = "right"
         self.size = 1
-    
+
     # Moves the hero
     # In charge of hero gravity, jumping, moving left and right.
     # Calls the collision functions
     def move_player(self):
         active_keys = pygame.key.get_pressed()
-        if active_keys[pygame.K_w] and self.jump_timer <= self.JUMP_LIMIT:
+        if (active_keys[pygame.K_w] or active_keys[pygame.K_SPACE]) and self.jump_timer <= self.JUMP_LIMIT:
             self.jump_check = True
             if not self.jump_lock:
                 if self.jump_strike == 1:
                     self.y_vel = 0
                 self.y_vel -= self.JUMP_LIMIT / ((abs(self.y_vel) + 0.01) * 25)
                 self.jump_timer += 0.3
-        if not (active_keys[pygame.K_w] and self.jump_timer <= self.JUMP_LIMIT) or self.jump_lock:
+        if not ((active_keys[pygame.K_w] or active_keys[pygame.K_SPACE]) and self.jump_timer <= self.JUMP_LIMIT) or self.jump_lock:
             self.y_vel += 1
-        if not active_keys[pygame.K_w] and self.jump_check:
+        if not (active_keys[pygame.K_w] or active_keys[pygame.K_SPACE]) and self.jump_check:
             if self.jump_strike == 0:
                 self.jump_timer = 0
                 self.jump_strike = 1
@@ -107,7 +107,7 @@ class Player(pygame.sprite.Sprite):
     # Contextually runs animations (ex: if player is running player run animation)
     def player_animation(self):
         active_keys = pygame.key.get_pressed()
-        if (active_keys[pygame.K_w] and self.jump_strike == 1) or (self.jump_strike == 1 and self.jump_lock):
+        if ((active_keys[pygame.K_w] or active_keys[pygame.K_SPACE]) and self.jump_strike == 1) or (self.jump_strike == 1 and self.jump_lock):
             self.play_animation("Player_Double_Jump", 0.08)
         elif self.y_vel > 0:
             self.play_animation("Player_Fall")
