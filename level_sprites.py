@@ -130,8 +130,10 @@ def draw_levelx(number):
       draw_capped_stripx(14,6,3,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_three)
       draw_capped_stripx(14,2,1,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_three)
       draw_capped_stripx(20,3,2,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_three)
-      draw_capped_stripx(25,3,3,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_three)
       draw_capped_stripx(5,2,1,"Grass_Orange_Top_Left.png","Grass_Orange_Top_Center.png","Grass_Orange_Top_Right.png",level_three)
+      #anti cheat wall 
+      level_three.append(Environment_Sprite("Grass_Orange_Top_Left.png", 4, 0, True))
+      level_three.append(Environment_Sprite("Grass_Orange_Center_Left.png",4,1, True))
       #strawberry
       level_three.append(strawberry)
       generate_collision_list()
