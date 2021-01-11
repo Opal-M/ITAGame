@@ -292,7 +292,7 @@ class Player(pygame.sprite.Sprite):
 
 # creates the sprite class, used for general sprites
 class Environment_Sprite(pygame.sprite.Sprite):
-    def __init__(self, image, x=0, y=0, collision=False):
+    def __init__(self, image, x=0, y=0, collision=False, rescale = True):
         pygame.sprite.Sprite.__init__(self)
         scale_multiple = 2.5
         self.x = x * 16 * scale_multiple + (8 * scale_multiple)
@@ -302,9 +302,10 @@ class Environment_Sprite(pygame.sprite.Sprite):
         filename = "Images/Environmental_Sprites/" + image
         self.base_image = pygame.image.load(filename)
         base_image_rect = self.base_image.get_rect()
-        self.base_image = pygame.transform.scale(
-            self.base_image,
-            (math.floor(base_image_rect.width * scale_multiple), math.floor(base_image_rect.height * scale_multiple)))
+        if rescale:
+            self.base_image = pygame.transform.scale(
+                self.base_image,
+                (math.floor(base_image_rect.width * scale_multiple), math.floor(base_image_rect.height * scale_multiple)))
         self.image = self.base_image
         self.is_visible = True
         self.has_collision = collision

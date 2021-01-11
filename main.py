@@ -97,11 +97,16 @@ while not game_over:
             level_list = level_sprites.title_screen
         elif setup.level == 1:
             level_list = level_sprites.level_one
-            # multiply by 60
-            level_sprites.strawberry.x = 5 * 60
+            # multiply by 40 + 20
+            level_sprites.strawberry.x = (18 * 40) + 20
+            level_sprites.strawberry.y = (1 * 40) + 20
         elif setup.level == 2:
             level_list = level_sprites.level_two
         elif setup.level == 3:
+            level_list = level_sprites.level_three
+        elif setup.level == 4:
+            pass
+        elif setup.level == 5:
             level_list = level_sprites.level_three
         generate_collision_list(level_list)
         old_level = setup.level
